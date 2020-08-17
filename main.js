@@ -9,7 +9,7 @@ function computerPlay () {
 let options = ["rock","paper","scissor"];
 
 function playRound(playerSelection, computerSelection) {
-    roundNumber++;
+    
     console.log(roundNumber);
     playerSelection = window.prompt ("What will you choose?","");
     playerSelectionAlt = playerSelection.toLowerCase();
@@ -41,10 +41,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    if(roundNumber<=5) {
+    roundNumber++;
+
+    if( roundNumber <= 5) {
         playRound();
     }
     else {
-        (playerScore>computerScore) ? "Player Wins!" : "Computer Wins!";	
+        window.alert('Game is Over!');
+        if( playerScore > computerScore) {
+            window.alert('Player has won!');
+        }
+        else if( playerScore < computerScore) {
+            window.alert('Computer has won!');
+        }
+        else {
+            window.alert('It is a draw!');
+        }
     }
 }
